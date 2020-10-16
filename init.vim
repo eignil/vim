@@ -16,6 +16,8 @@ function! PackagerInit() abort
   " for markdown
   call packager#add('godlygeek/tabular')
   call packager#add('plasticboy/vim-markdown')
+  " keyboard layouts switch
+  call packager#add('lyokha/vim-xkbswitch')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
@@ -27,3 +29,6 @@ command! PackagerStatus call PackagerInit() | call packager#status()
 nnoremap <silent><Leader>ww :unmap <Leader>ww<BAR>packadd vimwiki<BAR>VimwikiIndex<CR>
 " Set clipboard.
 set clipboard+=unnamedplus
+
+let g:XkbSwitchLib='D:\Tools\nvim-win64\libxkbswitch64.dll'
+let g:XkbSwitchEnabled = 1
