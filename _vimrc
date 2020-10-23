@@ -7,6 +7,7 @@ endif
 function! PackagerInit() abort
   packadd vim-packager
   call packager#init()
+  call packager#add('eignil/vim.vim')
   call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
   call packager#add('vimwiki/vimwiki', { 'type': 'opt' })
   call packager#add('Shougo/deoplete.nvim')
