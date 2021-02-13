@@ -78,5 +78,5 @@ nnoremap <silent><Leader>ww :unmap <Leader>ww<BAR>packadd vimwiki<BAR>VimwikiInd
 set clipboard+=unnamedplus
 
 " https://github.com/DeXP/xkb-switch-win
-" let g:XkbSwitchLib='D:\Tools\nvim-win64\libxkbswitch64.dll'
+let g:XkbSwitchLib= stdpath("config").'\\bin\\libxkbswitch64.dll'
 let g:XkbSwitchEnabled = 1

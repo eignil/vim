@@ -21,5 +21,3 @@ endfunction
 
 packadd vim-packager
 call packager#setup(function('s:packager_init'))
-
-let g:XkbSwitchLib = '~/AppData/Local/nvim/bin/libxkbswitch64.dll'
