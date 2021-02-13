@@ -14,3 +14,8 @@ git clone https://github.com/kristijanhusak/vim-packager ~/vimfiles/pack/package
 git clone https://github.com/kristijanhusak/vim-packager ~/AppData/Local/nvim/pack/packager/opt/vim-packager
 ```
 
+# Install packages
+
+```
+:PackagerInstall
+```

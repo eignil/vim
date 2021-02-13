@@ -22,13 +22,18 @@ endif
 set nocompatible
 set nobackup
 set noswapfile
+set nowrap
 set history=1024
 set autochdir
 set whichwrap=b,s,<,>,[,]
 set nobomb
+set number
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 " Vim 的默认寄存器和系统剪贴板共享
 set clipboard+=unnamed
+" Set clipboard.
+set clipboard+=unnamedplus
+
 " 设置 alt 键不映射到菜单栏
 set winaltkeys=no
 " }}}
@@ -41,42 +46,8 @@ let $LANG = 'en_US.UTF-8'
 "language messages zh_CN.UTF-8
 " }}}
 
-" GUI {{{
-if has("gui_running")
-    colorscheme Tomorrow-Night
-
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-
-    set cursorline
-    set hlsearch
-    set number
-    " 窗口大小
-    set lines=35 columns=140
-    " 分割出来的窗口位于当前窗口下边/右边
-    set splitbelow
-    set splitright
-    "不显示工具/菜单栏
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=b
-    " 使用内置 tab 样式而不是 gui
-    set guioptions-=e
-    set nolist
-    " set listchars=tab:▶\ ,eol:¬,trail:·,extends:>,precedes:<
-    set guifont=Inconsolata:h12:cANSI
-endif
-
-" }}}
-
-
 "Lazy load plugins with a mapping
 nnoremap <silent><Leader>ww :unmap <Leader>ww<BAR>packadd vimwiki<BAR>VimwikiIndex<CR>
-" Set clipboard.
-set clipboard+=unnamedplus
-
 " https://github.com/DeXP/xkb-switch-win
 let g:XkbSwitchLib= stdpath("config").'\\bin\\libxkbswitch64.dll'
 let g:XkbSwitchEnabled = 1
