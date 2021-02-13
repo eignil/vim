@@ -3,26 +3,23 @@ if &compatible
   set nocompatible
 endif
 
-function! PackagerInit() abort
-  packadd vim-packager
-  call packager#init()
-  call packager#add('eignil/vim.vim')
-  call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
-  call packager#add('vimwiki/vimwiki', { 'type': 'opt' })
-  call packager#add('Shougo/deoplete.nvim')
-  call packager#add('morhetz/gruvbox')
-  call packager#add('skywind3000/vim-terminal-help')
-  call packager#add('skywind3000/asyncrun.vim')
+function! s:packager_init(packager) abort
+  call a:packager.add('kristijanhusak/vim-packager', { 'type': 'opt' })
+  call a:packager.add('vimwiki/vimwiki', { 'type': 'opt' })
+  " call a:packager.add('junegunn/fzf', { 'do': './install --all && ln -s $(pwd) ~/.fzf'})
+  call a:packager.add('junegunn/fzf.vim')
+  call a:packager.add('Shougo/deoplete.nvim')
+  call a:packager.add('morhetz/gruvbox')
+  call a:packager.add('skywind3000/vim-terminal-help')
+  call a:packager.add('skywind3000/asyncrun.vim')
   " for markdown
-  call packager#add('godlygeek/tabular')
-  call packager#add('plasticboy/vim-markdown')
+  call a:packager.add('godlygeek/tabular')
+  call a:packager.add('plasticboy/vim-markdown')
   " keyboard layouts switch
-  call packager#add('lyokha/vim-xkbswitch')
+  call a:packager.add('lyokha/vim-xkbswitch')
 endfunction
 
-command! PackagerInstall call PackagerInit() | call packager#install()
-command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
-command! PackagerClean call PackagerInit() | call packager#clean()
-command! PackagerStatus call PackagerInit() | call packager#status()
+packadd vim-packager
+call packager#setup(function('s:packager_init'))
 
-" git clone https://github.com/kristijanhusak/vim-packager ~/vimfiles/pack/packager/opt/vim-packager
+let g:XkbSwitchLib = '~/AppData/Local/nvim/bin/libxkbswitch64.dll'
