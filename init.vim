@@ -11,7 +11,6 @@ function! s:packager_init(packager) abort
   " call a:packager.add('junegunn/fzf', { 'do': './install --all && ln -s $(pwd) ~/.fzf'})
   call a:packager.add('junegunn/fzf.vim')
   call a:packager.add('Shougo/deoplete.nvim')
-  call a:packager.add('morhetz/gruvbox')
   call a:packager.add('skywind3000/vim-terminal-help')
   call a:packager.add('skywind3000/asyncrun.vim')
   " for markdown
