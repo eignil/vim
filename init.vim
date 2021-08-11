@@ -18,6 +18,9 @@ function! s:packager_init(packager) abort
   call a:packager.add('plasticboy/vim-markdown')
   " keyboard layouts switch
   call a:packager.add('lyokha/vim-xkbswitch')
+  " file tree
+  call a:packager.add('Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' })
+  call a:packager.add('kristijanhusak/defx-icons')
 endfunction
 
 packadd vim-packager
