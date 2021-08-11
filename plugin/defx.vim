@@ -1,5 +1,5 @@
 " Setting here come from https://zhuanlan.zhihu.com/p/358828723 
-nmap <silent> ff :Defx  -search=`expand('%:p')` -toggle <cr>
+nmap <silent> ff :Defx  -columns=icons:indent:filename:type -search=`expand('%:p')` -toggle <cr>
 "打开vim自动打开defx
 func! ArgFunc() abort
     let s:arg = argv(0)
@@ -9,7 +9,7 @@ func! ArgFunc() abort
         return fnamemodify(s:arg, ':h')
     endif
 endfunc
-autocmd VimEnter * Defx `ArgFunc()` -no-focus -search=`expand('%:p')`
+autocmd VimEnter * Defx `ArgFunc()` -no-focus -columns=icons:indent:filename:type -search=`expand('%:p')`
 
 " 设置defx树的一些格式
 call defx#custom#option('_', {

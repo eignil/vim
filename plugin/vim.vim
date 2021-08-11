@@ -51,3 +51,6 @@ nnoremap <silent><Leader>ww :unmap <Leader>ww<BAR>packadd vimwiki<BAR>VimwikiInd
 " https://github.com/DeXP/xkb-switch-win
 let g:XkbSwitchLib= stdpath("config").'\\bin\\libxkbswitch64.dll'
 let g:XkbSwitchEnabled = 1
+
+" https://github.com/APZelos/blamer.nvim
+let g:blamer_enabled = 1

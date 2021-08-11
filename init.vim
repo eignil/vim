@@ -4,7 +4,8 @@ if &compatible
 endif
 
 function! s:packager_init(packager) abort
-  call a:packager.add('kristijanhusak/vim-packager', { 'type': 'opt' })
+  " Do not need vim-packager as it clone by hand. 
+  " call a:packager.add('kristijanhusak/vim-packager', { 'type': 'opt' })
   call a:packager.add('vim-airline/vim-airline')
   call a:packager.add('vim-airline/vim-airline-themes')
   call a:packager.add('vimwiki/vimwiki', { 'type': 'opt' })
@@ -21,6 +22,7 @@ function! s:packager_init(packager) abort
   " file tree
   call a:packager.add('Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' })
   call a:packager.add('kristijanhusak/defx-icons')
+  call a:packager.add('APZelos/blamer.nvim')
 endfunction
 
 packadd vim-packager
