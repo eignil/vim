@@ -22,7 +22,7 @@ endif
 set nocompatible
 set nobackup
 set noswapfile
-set nowrap
+" set nowrap
 set history=1024
 set autochdir
 set whichwrap=b,s,<,>,[,]
@@ -33,7 +33,8 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 set clipboard+=unnamed
 " Set clipboard.
 set clipboard+=unnamedplus
-
+inoremap <S-Insert> <C-R>+
+cnoremap <S-Insert> <C-R>+
 " 设置 alt 键不映射到菜单栏
 set winaltkeys=no
 " }}}
@@ -48,9 +49,10 @@ let $LANG = 'en_US.UTF-8'
 
 "Lazy load plugins with a mapping
 nnoremap <silent><Leader>ww :unmap <Leader>ww<BAR>packadd vimwiki<BAR>VimwikiIndex<CR>
+if (g:iswindows)
 " https://github.com/DeXP/xkb-switch-win
 let g:XkbSwitchLib= stdpath("config").'\\bin\\libxkbswitch64.dll'
 let g:XkbSwitchEnabled = 1
-
+endif
 " https://github.com/APZelos/blamer.nvim
 let g:blamer_enabled = 1

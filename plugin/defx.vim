@@ -9,7 +9,7 @@ func! ArgFunc() abort
         return fnamemodify(s:arg, ':h')
     endif
 endfunc
-autocmd VimEnter * Defx `ArgFunc()` -no-focus -columns=icons:indent:filename:type -search=`expand('%:p')`
+" autocmd VimEnter * Defx `ArgFunc()` -no-focus -columns=icons:indent:filename:type -search=`expand('%:p')`
 
 " 设置defx树的一些格式
 call defx#custom#option('_', {
